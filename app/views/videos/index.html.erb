@@ -7,5 +7,7 @@
     <%= render @videos %>
   </div>
 
-
+  <% if user_signed_in? && current_user.admin? %>
+    <%= link_to 'New Video', new_video_path %>
+  <% end %>
 </div>
