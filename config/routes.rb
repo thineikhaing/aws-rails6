@@ -1,5 +1,8 @@
 Rails.application.routes.draw do
-  resources :videos
+
+  devise_for :users
+  resources :users, only: [:index, :show, :edit, :update]
+  resources :videos, only: [:index, :show]
   root 'pages#home'
 
   match '/send_mail', to: 'pages#send_mail', via: 'post'
