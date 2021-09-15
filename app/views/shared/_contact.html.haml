@@ -1,0 +1,15 @@
+%article#contact-form.col-sm-9
+  %h2.display-5 Contact Us
+  %p.lead Reach out to say hello or let us know how we can help you
+  = form_tag(send_mail_path, class: 'col') do
+    .form-label-group
+      = text_field_tag 'name', nil, class: 'form-control form-control-lg', placeholder: 'Name'
+      %label{:for => "name"} Name
+    .form-label-group
+      = email_field_tag 'email', nil, class: 'form-control form-control-lg', placeholder: 'email address'
+      %label{:for => "email"} Email address
+    .form-label-group
+      = text_area_tag 'message', nil, class: 'form-control form-control-lg', rows: 3, placeholder: 'comments'
+      %label{:for => "message"} Comments
+    .btn-gradient
+      = submit_tag nil, class: 'btn btn-transparent'

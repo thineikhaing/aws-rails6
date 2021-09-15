@@ -1,0 +1,29 @@
+-# %nav.navbar.navbar-expanded-md.navbar-dark.bg-dark.px-5
+%nav.navbar.navbar-expand-lg.navbar-dark.bg-dark.px-5
+  .container-fluid
+    =link_to 'Roundtrip', root_path, class: 'navbar-brand'
+    %button.navbar-toggler{"aria-controls" => "navbarMain", "aria-expanded" => "false", "aria-label" => "Toggle navigation", "data-target" => "#navbarMain", "data-toggle" => "collapse", type: "button"}
+      %span.navbar-toggler-icon
+    #navbarMain.collapse.navbar-collapse
+      %ul.navbar-nav.me-auto.mb-2.mb-lg-0
+        %li.nav-item
+          =link_to 'Home', root_path, class: 'nav-link'
+        -# %li.nav-item
+        -#   =link_to 'Videos', videos_path, class: 'nav-link'
+        %li.nav-item
+          =link_to 'Users', users_path, class: 'nav-link'
+        - if user_signed_in?
+          %li.nav-item
+            =link_to 'Profile', user_path(current_user), class: 'nav-link'
+          %li.nav-item
+            =link_to 'Logout', destroy_user_session_path, method: :delete, class: 'nav-link'
+        -else  
+          %li.nav-item
+            =link_to 'Login', new_user_session_path, class: 'nav-link'
+          %li.nav-item
+            =link_to 'Sign Up', new_user_registration_path, class: 'nav-link'
+
+  
+      %form.d-flex
+        %input.form-control.me-2{"aria-label" => "Search", placeholder: "Search", type: "search"}/
+        %button.btn.btn-outline-success{type: "submit"} Search

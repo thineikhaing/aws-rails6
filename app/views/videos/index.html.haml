@@ -1,0 +1,7 @@
+%p#notice= notice
+.container-fluid
+  %h1 Videos
+  .row
+    = render @videos
+  - if user_signed_in? && current_user.admin?
+    = link_to 'New Video', new_video_path

@@ -1,0 +1,6 @@
+.col-6
+  %h3= link_to video.title, video
+  %iframe{:allow => "accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture", :allowfullscreen => "", :frameborder => "0", :height => "315", :src => "https://www.youtube.com/embed/#{video.youtube_id}", :width => "560"}
+  - if user_signed_in? && current_user.admin?
+    = link_to 'Edit', edit_video_path(video)
+    = link_to 'Destroy', video, method: :delete, data: { confirm: 'Are you sure?' }
