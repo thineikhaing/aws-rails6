@@ -1,8 +1,6 @@
 # config valid for current version and patch releases of Capistrano
 lock "~> 3.16.0"
 
-lock "~> 3.14.0"
-
 require 'capistrano-db-tasks'
 
 #FIXME add your app name here

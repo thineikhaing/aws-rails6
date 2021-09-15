@@ -1,3 +1,6 @@
+server '18.141.141.13', user: 'deploy', roles: %w{web app db}
+set :rails_env, 'production'
+
 # server-based syntax
 # ======================
 # Defines a single server with a list of roles and multiple properties.
@@ -7,8 +10,6 @@
 # server "example.com", user: "deploy", roles: %w{app web}, other_property: :other_value
 # server "db.example.com", user: "deploy", roles: %w{db}
 
-server '18.139.0.111', user: 'deploy', roles: %w{web app db}
-set :rails_env, 'production'
 
 # role-based syntax
 # ==================
