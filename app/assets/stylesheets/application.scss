@@ -13,9 +13,13 @@
  *= require_tree .
  *= require_self
  */
- @import "bootstrap/scss/bootstrap";
- @import "scaffolds";
- @import "float_label";
- @import "home";
- @import "users";
- @import "videos";
+ // Graphical variables
+@import "config/bootstrap_variables";
+
+// External libraries
+@import "bootstrap/scss/bootstrap";
+@import "scaffolds";
+@import "float_label";
+@import "home";
+@import "users";
+@import "videos";
