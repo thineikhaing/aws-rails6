@@ -8,9 +8,13 @@
     = csp_meta_tag
     = stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload'
     = javascript_pack_tag 'application', 'data-turbolinks-track': 'reload'
+    %link{:href => "https://unpkg.com/leaflet@1.7.1/dist/leaflet.css", :rel => "stylesheet"}/
+    %script{:src => "https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"}
+    %script{src: "https://maps.googleapis.com/maps/api/js?key=AIzaSyCmCjZVJvI5h2Qg7XcdI9jTFjyK-IgzyQk&libraries=places,geometry", type: "text/javascript"}
+    
   %body{style: "margin: 0"}
-    = render 'shared/alert'
-    = render 'shared/nav'
-    = render 'shared/header'
+    -# = render 'shared/alert'
+    -# = render 'shared/nav'
+    -# = render 'shared/header'
     = yield
-    = render 'shared/footer'
+    -# = render 'shared/footer'
